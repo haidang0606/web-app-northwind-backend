@@ -1,12 +1,14 @@
 from flask import Flask
 from flask import request
 from flask import jsonify
+from flask_cors import CORS
 import os
 
 from BusinessObject import Customer as CustomerEntity
 from DataObject import Customer
 
 app = Flask(__name__)
+CORS(app)
 
 connection_data = dict()
 connection_data['host'] = os.getenv('host')
